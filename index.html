@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAE Salary Breakdown & Take-Home Calculator 2026</title>
+  <meta name="description"
+    content="Free UAE salary calculator. See your basic salary, allowances, monthly take-home, and how your salary structure affects your future gratuity.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="active">Salary Calculator</a>
+    <a href="https://hakimwebsites.github.io/gratuity-calculator/">Gratuity Calculator</a>
+  </nav>
+
+  <header>
+    <h1>UAE Salary Breakdown Calculator</h1>
+    <p class="subtitle">See your real take-home pay and how your basic salary affects your future gratuity.</p>
+  </header>
+
+  <main class="calculator-card">
+    <div class="input-group">
+      <label for="totalSalary">Total Monthly Salary Offered (AED)</label>
+      <input type="number" id="totalSalary" placeholder="e.g. 10000" min="0">
+      <small>The full package your employer quoted, including all allowances.</small>
+    </div>
+
+    <div class="input-group">
+      <label for="basicPercent">Basic Salary Percentage</label>
+      <select id="basicPercent">
+        <option value="60">60% (Common minimum — check your contract)</option>
+        <option value="50">50%</option>
+        <option value="70">70% (Better for gratuity)</option>
+        <option value="custom">Custom — I know my exact basic salary</option>
+      </select>
+    </div>
+
+    <div class="input-group" id="customBasicGroup" style="display:none;">
+      <label for="customBasic">Your Exact Basic Salary (AED)</label>
+      <input type="number" id="customBasic" placeholder="e.g. 6000" min="0">
+    </div>
+
+    <div class="input-group">
+      <label for="employeeType">Employee Type</label>
+      <select id="employeeType">
+        <option value="expat">Expat (No income tax, no GPSSA deduction)</option>
+        <option value="national">UAE/GCC National (11% GPSSA pension deduction)</option>
+      </select>
+    </div>
+
+    <button id="calculateBtn">Calculate Breakdown</button>
+
+    <div id="result" class="result-box" style="display:none;">
+      <h2>Your Salary Breakdown</h2>
+      <div class="breakdown-row">
+        <span>Basic Salary</span>
+        <strong id="basicAmount">0 AED</strong>
+      </div>
+      <div class="breakdown-row">
+        <span>Allowances (Housing, Transport, etc.)</span>
+        <strong id="allowanceAmount">0 AED</strong>
+      </div>
+      <div class="breakdown-row" id="deductionRow" style="display:none;">
+        <span>GPSSA Deduction</span>
+        <strong id="deductionAmount">0 AED</strong>
+      </div>
+      <div class="breakdown-row total-row">
+        <span>Monthly Take-Home</span>
+        <strong id="takeHomeAmount">0 AED</strong>
+      </div>
+      <p class="result-note" id="gratuityNote"></p>
+    </div>
+  </main>
+
+  <div class="ad-slot" id="ad-slot-1"></div>
+
+  <section class="info-section">
+    <h2>Why Your Basic Salary Percentage Matters</h2>
+    <p>In the UAE, employers split your total salary into <strong>basic salary</strong> and <strong>allowances</strong>
+      (housing, transport, other). This split matters more than most people realize:</p>
+    <ul>
+      <li>Your <strong>end-of-service gratuity</strong> is calculated only on your basic salary — a higher basic
+        percentage means a higher gratuity payout</li>
+      <li>Some bank loans and credit limits are based on basic salary, not total salary</li>
+      <li>UAE has <strong>no personal income tax</strong> — for expats, your take-home is generally your full salary
+        minus any company-specific deductions</li>
+    </ul>
+    <p class="disclaimer">This tool gives an estimate for guidance only and is not financial or legal advice. Confirm
+      exact figures with your employer's HR or MOHRE.</p>
+  </section>
+
+  <div class="ad-slot" id="ad-slot-2"></div>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-item">
+      <summary>What's a good basic salary percentage to negotiate?</summary>
+      <p>Many employees aim for 60-70% basic salary, since it's used for gratuity calculations and often for loan
+        eligibility. A very low basic percentage (e.g. 30-40%) reduces your future gratuity significantly, even if your
+        total package looks the same.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do UAE employees pay income tax?</summary>
+      <p>No. The UAE does not levy personal income tax on salaries for individuals, whether expat or national. Your
+        take-home is generally your full salary minus any company-specific or pension deductions.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What is GPSSA and who pays it?</summary>
+      <p>GPSSA (General Pension and Social Security Authority) is a mandatory pension contribution that applies to UAE
+        and GCC nationals only, typically calculated as a percentage of basic salary plus certain allowances. Expats are
+        not enrolled in GPSSA.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How does this connect to my gratuity?</summary>
+      <p>Your gratuity is calculated purely on your basic salary figure. Once you know your basic salary from this tool,
+        you can plug it directly into our <a href="https://hakimwebsites.github.io/gratuity-calculator/">Gratuity
+          Calculator</a> to see your end-of-service entitlement.</p>
+    </details>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 UAE Salary Calculator. Built for UAE employees.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
